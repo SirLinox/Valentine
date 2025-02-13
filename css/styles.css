@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #ffe4e1;
+  color: #ff1493;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 30vh;
+  width: 50vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.animation {
+  width: 200px;
+  margin: 20px 0;
+  margin-left: -15%;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  top: -30px;
+}
+
+.heart-image {
+  position: absolute;
+  width: 150px; /* Größere Herzen */
+  height: 150px;
+  object-fit: cover;
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-6.93-5.36-10.92-9.39a6 6 0 0 1 .21-8.64A6.06 6.06 0 0 1 9 3a6.06 6.06 0 0 1 7.71 0 6 6 0 0 1 .21 8.64C18.93 15.64 12 21 12 21z'/></svg>");
+  mask-size: cover;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21s-6.93-5.36-10.92-9.39a6 6 0 0 1 .21-8.64A6.06 6.06 0 0 1 9 3a6.06 6.06 0 0 1 7.71 0 6 6 0 0 1 .21 8.64C18.93 15.64 12 21 12 21z'/></svg>");
+  -webkit-mask-size: cover;
+  z-index: -1;
+  pointer-events: none; /* Verhindert Interaktion mit den Bildern */
+}
+
+.heart-image:nth-child(1) { top: 5%; left: 5%; }  /* Position des ersten Herzens */
+.heart-image:nth-child(2) { top: 5%; left: 40%; } /* Position des zweiten Herzens */
+.heart-image:nth-child(3) { top: 5%; left: 75%; } /* Position des dritten Herzens */
+.heart-image:nth-child(4) { top: 50%; left: 10%; } /* Position des vierten Herzens */
+.heart-image:nth-child(5) { top: 50%; left: 45%; } /* Position des fünften Herzens */
+.heart-image:nth-child(6) { top: 50%; left: 80%; } /* Position des sechsten Herzens */
+.heart-image:nth-child(7) { top: 85%; left: 25%; } /* Position des siebten Herzens */
+
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#yes-btn {
+  background-color: #ff69b4;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+#no-btn {
+  background-color: #dcdcdc;
+  color: black;
+  position: relative;
+  z-index: 2;
+}
+
+#response-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.response-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slide-in 0.5s ease;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-gif {
+  width: 250px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.response-box h2 {
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+button#close-overlay {
+  margin: 20px auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
